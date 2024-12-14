@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- wasm-pack build --target web -->
+<!-- python -m http.server -->
+<!-- http://localhost:8000/tutorial1_window.html -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WGPU/WASM/Rust</title>
+    <style>
+        html{height:100%;}
+        body { position:absolute; top:0; bottom:0; right:0; left:0; margin:0; padding:0; overflow: hidden; }
+        canvas {
+            background-color: black;
+            padding:0;
+            margin:0;
+        }        
+    </style>
+</head>
+
+<body id="wasm-example">
+  <script type="module">
+      import init from "./pkg/mine.js";
+      init().then(() => {
+          console.log("WASM Loaded");
+      });
+  </script>
+</body>
+
+</html>
